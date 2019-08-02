@@ -29,13 +29,13 @@
 
 <p> This became the template state for any blog post added. Once the content itself had all been added to state it was then a case of manipulating the data in the render. Although a touch fiddly trying to remember where you were upto in regard to the content, I found this an effective way to move images and paragraphs up and down the page as needed. </p>
 
-<img src="src/src/images/readme-imgs/blog-content-manip.png" alt="blog-content-manip">
+<img src="src/images/readme-imgs/blog-content-manip.png" alt="blog-content-manip">
 
 <p> Some images have captions and some don't, and I felt that having captions just written below the images could look inconsistent. With this in mind, I used a simple CSS transition to allow the viewer to hover over a photo and view a caption if it exists. The examples and code are below.</p>
 
-<img src="src/src/images/readme-imgs/image-hide-caption.png" alt="image-hide-caption">
-<img src="src/src/images/readme-imgs/image-show-caption.png" alt="image-show-caption">
-<img src="src/src/images/readme-imgs/image-caption-code.png" alt="image-caption-code">
+<img src="src/images/readme-imgs/image-hide-caption.png" alt="image-hide-caption">
+<img src="src/images/readme-imgs/image-show-caption.png" alt="image-show-caption">
+<img src="src/images/readme-imgs/image-caption-code.png" alt="image-caption-code">
 
 
 <h3><strong>METHOD - Home Page</strong></h3>
