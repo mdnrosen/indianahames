@@ -20,42 +20,42 @@ class Posts extends React.Component{
         { title: 'Only me...', location: 'Bolivia', date: '10th November 2012', url: 'onlyme', background: 'onlymeBG'},
         { title: 'Highs & Lows', location: 'Bolivia', date: '13th November 2012', url: 'highsandlows', background: 'highsandlowsBG'},
         { title: 'Kilimanjaro', location: 'Tanzania', date: '15th October 2015', url: 'kili', background: 'kilimanjaroBG'}
-      ]
+      ],
+      search: ''
 
     }
+    this.handleChange = this.handleChange.bind(this)
+  }
 
-      this.handleChange = this.handleChange.bind(this)
-    }
 
+  handleChange(e) {
+    this.setState({ search: e.target.value}) 
+  }
 
-    handleChange(e) {
-      const filterLocation = e.target.value
-      this.state.blogs.forEach(blog => {
-        if (filterLocation=== blog.location) {
-          console.log('a match')
-          this.setState({ blog })
-        }
-      })
-    }
-  
+  filteredPosts() {
+    const regexp = new RegExp(this.state.search, 'i')
+    return this.state.blogs.filter(blog => regexp.test(blog.location))
+  }
+
   render(){
-    console.log(this.state)
+    console.log(this.filteredPosts())
     return(
       <div>
         <section className="header">
           <div className="headerContainer">
             <h1>INDIANA HAMES</h1>
-            <select value={this.state.value} onChange={this.handleChange}>
-              <option value="brazil">Brazil</option> 
-              <option value="bolivia">Bolivia</option> 
-              <option value="tanzania">Tanzania</option>              
+            <select defaultValue="" onChange={this.handleChange}>
+              <option value="">-</option> 
+              <option value="Brazil">Brazil</option> 
+              <option value="Bolivia">Bolivia</option> 
+              <option value="Tanzania">Tanzania</option>              
             </select> 
           </div>
         </section>
        
        
         <section className="mainPage">
-          {this.state.blogs.map((blog, i) =>
+          {this.filteredPosts().map((blog, i) =>
             <Link key={i} to={`/${blog.url}`}>
               <div className={`${blog.background} blogCard`}>
                 <h2 >{blog.title}</h2>
