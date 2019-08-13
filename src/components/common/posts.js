@@ -18,23 +18,42 @@ class Posts extends React.Component{
         { title: 'Falling...', location: 'Brazil', date: '25th October 2012', url: 'falling', background: 'fallingBG'},
         { title: 'Bonito, and it is.', location: 'Brazil', date: '30th October 2012', url: 'bonito', background: 'bonitoBG'},
         { title: 'Only me...', location: 'Bolivia', date: '10th November 2012', url: 'onlyme', background: 'onlymeBG'},
-        { title: 'Highs & Lows', location: 'Bolivia', date: '13th November 2012', url: 'highsandlows', background: 'highsandlowsBG'}
+        { title: 'Highs & Lows', location: 'Bolivia', date: '13th November 2012', url: 'highsandlows', background: 'highsandlowsBG'},
+        { title: 'Kilimanjaro', location: 'Tanzania', date: '15th October 2015', url: 'kili', background: 'kilimanjaroBG'}
       ]
-
 
     }
 
+      this.handleChange = this.handleChange.bind(this)
+    }
 
-  }
+
+    handleChange(e) {
+      const filterLocation = e.target.value
+      this.state.blogs.forEach(blog => {
+        if (filterLocation=== blog.location) {
+          console.log('a match')
+          this.setState({ blog })
+        }
+      })
+    }
+  
   render(){
+    console.log(this.state)
     return(
       <div>
         <section className="header">
           <div className="headerContainer">
             <h1>INDIANA HAMES</h1>
-            <i class="fas fa-bars"></i>
+            <select value={this.state.value} onChange={this.handleChange}>
+              <option value="brazil">Brazil</option> 
+              <option value="bolivia">Bolivia</option> 
+              <option value="tanzania">Tanzania</option>              
+            </select> 
           </div>
         </section>
+       
+       
         <section className="mainPage">
           {this.state.blogs.map((blog, i) =>
             <Link key={i} to={`/${blog.url}`}>
@@ -46,11 +65,14 @@ class Posts extends React.Component{
             </Link>
           )}
         </section>
+
+
         <Footer />
       </div>
     )
   }
 }
+
 
 
 export default Posts

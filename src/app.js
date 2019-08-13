@@ -17,6 +17,7 @@ import Falling from './components/articles/falling'
 
 import OnlyMe from './components/articles/onlyme'
 import HighsAndLows from './components/articles/highs'
+import Kilimanjaro from './components/articles/kili'
 
 
 
@@ -38,6 +39,7 @@ class App extends React.Component{
         <Route path="/falling" component={Falling} />
         <Route path="/onlyme" component={OnlyMe} />
         <Route path="/highsandlows" component={HighsAndLows} />
+        <Route path="/kili" component={Kilimanjaro} />
       </BrowserRouter>
     )
   }
