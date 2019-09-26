@@ -44,12 +44,14 @@ class Posts extends React.Component{
         <section className="header">
           <div className="headerContainer">
             <h1>INDIANA HAMES</h1>
-            <select defaultValue="" onChange={this.handleChange}>
-              <option value="">-</option> 
-              <option value="Brazil">Brazil</option> 
-              <option value="Bolivia">Bolivia</option> 
-              <option value="Tanzania">Tanzania</option>              
-            </select> 
+            <div className="select">
+              <select defaultValue="" onChange={this.handleChange}>
+                <option value="">-</option> 
+                <option value="Brazil">Brazil</option> 
+                <option value="Bolivia">Bolivia</option> 
+                <option value="Tanzania">Tanzania</option>              
+              </select> 
+            </div>
           </div>
         </section>
        

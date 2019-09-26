@@ -187,6 +187,16 @@ body {
       .fas:hover {
         cursor: pointer;
       }
+      .select {
+        width: 200px;
+        height: 50px;
+        select {
+          appearance: none;
+          option {
+            font-family: inherit;
+          }
+        }
+      }
     
   }
 }
